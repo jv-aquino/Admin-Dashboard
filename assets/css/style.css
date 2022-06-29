@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .container {
@@ -14,15 +17,36 @@
   "sidebar main";
 }
 
-header {
-  grid-area: header;
-  background-color: red;
-}
 .sidebar {
   grid-area: sidebar;
-  background-color: blue;
+  background-color: #7e22ce;
+  color: #faf5ff;
+}
+.sidebar > * {
+  padding: 15px 16px;
+}
+
+.sidebar h2 {
+  font-size: 1.94rem;
+}
+.sidebar li {
+  font-size: 1.15rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+.sidebar .navigation,
+.sidebar .branding {
+  display: grid;
+  gap: 8px;
+}
+
+header {
+  grid-area: header;
+  background-color: #FFF973;
 }
 main {
   grid-area: main;
-  background-color: gray;
+  background-color: #faf5ff;
 }
