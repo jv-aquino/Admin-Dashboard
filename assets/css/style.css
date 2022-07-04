@@ -2,7 +2,15 @@
 
 :root {
   --custom-purple: #7e22ce;
+  --light-purple: #c084fc;
   --white-purple: #faf5ff;
+  --black-purple: #170722;
+  --custom-white: #fffffa;
+}
+
+::selection {
+  color: var(--white-purple);
+  background-color: var(--custom-purple);
 }
 
 * {
@@ -16,9 +24,13 @@ body {
   overflow-x: hidden;
 }
 
+h2, h3 {
+  color: var(--black-purple);
+}
+
 .container {
   width: 100vw;
-  height: 120vh;
+  height: 115vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 3fr 17fr;
@@ -38,6 +50,8 @@ body {
   padding: 18px;
 }
 .sidebar h2 {
+  color: var(--white-purple);
+  cursor: default;
   font-size: 2rem;
   padding: 20px 16px 15px;
 }
@@ -50,6 +64,7 @@ body {
 }
 .sidebar li {
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .sidebar ul {
   list-style: none;
@@ -64,14 +79,15 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fffffa;box-shadow: -0.1px 1px 9px 1px rgba(0, 0, 0, 0.4);
+  background-color: var(--custom-white);
+  box-shadow: -0.1px 1px 9px 1px rgba(0, 0, 0, 0.4);
   z-index: 1;
   
-  padding: 0 0 5px;
+  padding: 0 0 7px;
 
   display: grid;
   grid-template-columns: 5fr 3fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 10fr 15fr;
 }
 header > div {
   display: grid;
@@ -80,8 +96,20 @@ header > div {
   grid-auto-rows: 1fr;
   gap: 0;
 }
+header .welcome-div {
+  grid-auto-flow: column;
+  gap: 6px;
+}
+header .welcome-div div > * {
+  padding: 2px 4px;
+}
 header .welcome-div h2 {
   font-size: 1.4rem;
+}
+header #profile-pic {
+  width: 83px;
+  height: 83px;
+  border: none;
 }
 header .buttons-div {
   grid-auto-flow: column;
@@ -97,6 +125,33 @@ header .buttons-div button {
   padding: 7px 18px;
   cursor: pointer;
 }
+header .search-div {
+  padding-left: 11px;
+
+  grid-template-columns: min-content 1fr;
+  grid-auto-flow: column;
+  color: var(--black-purple);
+}
+header #search {
+  background-color: #d4d4d8;
+  width: 97%;
+  justify-self: center;
+
+  border: none;
+  border-radius: 15px;
+
+  padding: 7px;
+  padding-left: 8px;
+  font-size: 16px;
+
+  outline: none;
+  transition: .4s;
+}
+header #search:hover,
+header #search:focus {
+  background-color: var(--light-purple);
+  color: var(--custom-white);
+}
 
 
 main {
@@ -109,7 +164,7 @@ main {
   grid-template-areas:
   "projects announcements"
   "projects trending";
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   padding-right: 22px;
 }
 main > div {
@@ -134,9 +189,9 @@ main .projects .cards-grid {
   gap: 15px;
 }
 main .projects .cards {
-  background-color: #fffffa;
+  background-color: var(--custom-white);
   border-radius: 6px;
-  border-left: 7px solid #7e22ce;
+  border-left: 7px solid var(--custom-purple);
   display: grid;
   align-items: center;
   padding-left: 15px;
@@ -154,7 +209,7 @@ main .announcements {
 .announcements .cards-grid ,
 .trending .cards-grid {
   padding: 10px 0;
-  background-color: #fffffa;
+  background-color: var(--custom-white);
   border-radius: 5px;
   display: grid;
   align-items: center;
@@ -167,11 +222,11 @@ main .announcements {
 .announcements .cards p {
   padding-top: 4px;
 }
-.announcements .cards.c2 {
+.announcements .cards.c2, 
+.announcements .cards.c3 {
   border-radius: 1px;
   border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  padding: 18px 0;
+  padding: 22px 0 0;
 }
 .announcements .cards-grid h3 {
   font-size: 14px;
@@ -181,6 +236,7 @@ main .trending {
   grid-area: trending;
 }
 .trending .cards-grid {
+  padding-left: 10px;
   gap: 7px;
   justify-items: start;
 }
@@ -193,10 +249,11 @@ main .trending {
   display: grid;
   align-items: center;
 }
-.trending .cards img {
+.trending .cards img,
+.welcome-div img {
   align-self: start;
   border-radius: 50%;
-  border: 2px solid #c084fc;
+  border: 2px solid var(--light-purple);
   width: 70px;
   height: 70px;
 }
