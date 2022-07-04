@@ -30,7 +30,7 @@ h2, h3 {
 
 .container {
   width: 100vw;
-  height: 115vh;
+  height: 113vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 3fr 17fr;
@@ -169,16 +169,17 @@ main {
 }
 main > div {
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 5fr;
 }
 main > div > h2 {
+  font-size: 24px;
   width: 95%;
   align-self: center;
   justify-self: center;
 }
 main .projects {
   grid-area: projects;
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: 1fr 11fr;
 }
 main .projects .cards-grid {
   justify-self: center;
