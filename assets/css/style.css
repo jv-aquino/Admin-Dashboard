@@ -6,9 +6,14 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .container {
@@ -16,7 +21,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 2fr 9fr;
+  grid-template-rows: 3fr 16fr;
   grid-template-areas: 
   "sidebar header"
   "sidebar main";
@@ -93,6 +98,7 @@ main {
   "projects announcements"
   "projects trending";
   padding-bottom: 40px;
+  padding-right: 20px;
 }
 main > div {
   display: grid;
@@ -111,7 +117,7 @@ main .projects .cards-grid {
   justify-self: center;
   width: 95%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-auto-rows: 1fr;
   gap: 15px;
 }
@@ -132,6 +138,21 @@ main .projects .cards {
 }
 main .announcements {
   grid-area: announcements;
+}
+.announcements .cards-grid {
+  padding: 4px 0;
+  background-color: #fffffa;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 13px;
+}
+.announcements .cards {
+  width: 80%;
+}
+.announcements .cards-grid h3 {
+  font-size: 14px;
 }
 main .trending {
   grid-area: trending;
