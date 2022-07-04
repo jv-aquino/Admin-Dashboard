@@ -18,10 +18,10 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 3fr 16fr;
+  grid-template-rows: 3fr 17fr;
   grid-template-areas: 
   "sidebar header"
   "sidebar main";
@@ -35,20 +35,21 @@ body {
   z-index: 2;
 }
 .sidebar > * {
-  padding: 16px;
+  padding: 18px;
 }
 .sidebar h2 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   padding: 20px 16px 15px;
 }
 .sidebar h2,
 .sidebar ul li {
   display: flex;
   align-items: center;
+  /* Vertical gap (SVG / text) */
   gap: 8px;
 }
 .sidebar li {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 .sidebar ul {
   list-style: none;
@@ -56,7 +57,8 @@ body {
 .sidebar .navigation,
 .sidebar .branding {
   display: grid;
-  gap: 13px;
+  /* Horizontal gap (li) */
+  gap: 20px;
 }
 
 
@@ -107,8 +109,8 @@ main {
   grid-template-areas:
   "projects announcements"
   "projects trending";
-  padding-bottom: 40px;
-  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-right: 22px;
 }
 main > div {
   display: grid;
@@ -149,23 +151,27 @@ main .projects .cards {
 main .announcements {
   grid-area: announcements;
 }
-.announcements .cards-grid {
-  padding: 5px 0;
+.announcements .cards-grid ,
+.trending .cards-grid {
+  padding: 10px 0;
   background-color: #fffffa;
   border-radius: 5px;
   display: grid;
   align-items: center;
   justify-items: center;
-  font-size: 13px;
+  font-size: 14px;
 }
 .announcements .cards {
-  width: 80%;
+  width: 75%;
+}
+.announcements .cards p {
+  padding-top: 4px;
 }
 .announcements .cards.c2 {
   border-radius: 1px;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-  padding: 10px 0;
+  padding: 18px 0;
 }
 .announcements .cards-grid h3 {
   font-size: 14px;
@@ -173,4 +179,24 @@ main .announcements {
 
 main .trending {
   grid-area: trending;
+}
+.trending .cards-grid {
+  gap: 7px;
+  justify-items: start;
+}
+.trending .cards {
+  display: grid;
+  gap: 5px;
+  grid-auto-flow: column;
+}
+.trending .cards div {
+  display: grid;
+  align-items: center;
+}
+.trending .cards img {
+  align-self: start;
+  border-radius: 50%;
+  border: 2px solid #c084fc;
+  width: 70px;
+  height: 70px;
 }
